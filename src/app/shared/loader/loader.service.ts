@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 /** Declares it as Injectable */
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class LoaderService {
   /** Variable initilaise of type subject */
 

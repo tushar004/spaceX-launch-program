@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { urls } from './url'
 import { LoaderService } from './shared/loader/loader.service';
 
+/**
+ * Component to show all the filters and content for the space x launch program.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +29,12 @@ export class AppComponent implements OnInit {
   }
 
 
+  /**
+   * Method to change the selected year which is by default undefined, if same year is selected twice then it's
+   * set to undefined to remove the year filter and calls the api to fetch the data.
+   * 
+   * @param {number} year Year selected by the user.
+   */
   yearChange(year: number): void {
     this.selectedYear = year===this.selectedYear?undefined:year;
     this.page = 1;
@@ -33,6 +42,14 @@ export class AppComponent implements OnInit {
   }
 
 
+  /**
+   * Method to change the selected filter for launch success or landing success or both which is by default
+   * undefined, if same year is selected twice then it's set to undefined to remove the filter and calls 
+   * the api to fetch the data.
+   * 
+   * @param {string} type Type of filter,i.e, either launch success or landing success.
+   * @param {boolean} val Value of the filter in boolean.
+   */
   filterChange(type: string, val: boolean): void {
     this.page = 1;
     if (type === 'launch') {
@@ -43,6 +60,11 @@ export class AppComponent implements OnInit {
     this.makeUrlAndUpdateData();
   }
 
+
+  /**
+   * Method to fetch the data from the API with the applied filters.
+   * 
+   */
   makeUrlAndUpdateData(): void{
     this.loader.showLoader();
     let url = urls.noFilter;
