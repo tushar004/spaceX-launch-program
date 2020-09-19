@@ -13,8 +13,24 @@
   margin-bottom: 10px;
 }
 
+.m-l-10{
+  margin-left: 10px;
+}
+
+.m-l-5{
+  margin-left: 5px;
+}
+
 .selected{
   background-color: #7cba01;
+}
+
+.mission-color{
+  color: #3300b1;
+}
+
+.res-color{
+  color: #6a6a6a;
 }
  
 
@@ -58,8 +74,6 @@
 
 .image-div{
   background-color: #f2f2f2;
-  margin: 10px;
-
 }
 
 .row-c{
@@ -70,6 +84,17 @@
 .image{
   max-width: 100%;
 }
+
+.p-t-10{
+  padding-top: 10px;
+}
+
+.hr-m{
+  margin-top: 0 !important;
+  width:80%;
+}
+
+
  /* On screens that are 700px wide or less, go from two columns to onw column */
  @media screen and (max-width: 700px)  {
   .col{
@@ -102,5 +127,8 @@
 @media screen and (min-width: 1025px) {
  .col{
   flex: 0 0 22%;
+ }
+ .sidenav{
+   flex: 18%;
  }
 }

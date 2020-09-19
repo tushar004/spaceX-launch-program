@@ -1,12 +1,13 @@
 <app-loader></app-loader>
 <div class="container2">
-  <span class="flex-100">
-    <h4>SpaceX Launch Programs</h4>
+  <span class="flex-100 m-l-10">
+    <h4><strong>SpaceX Launch Programs</strong></h4>
   </span>
   <div class="sidenav">
-    <h5 class="flex-100">Filters</h5>
+    <h6 class="flex-100 m-l-5"><strong>Filters</strong></h6>
     <div class="text-center">
-      <span> <u> Launch Year </u></span>
+      <span> Launch Year </span>
+      <hr class="hr-m">
       <div class="row">
         <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6" *ngFor="let y of years">
           <button [ngClass]="{'selected':y==selectedYear}" type="button"
@@ -14,31 +15,37 @@
         </div>
       </div>
 
-      <span> <u> Successfull Launch </u></span>
-      <div class="row">
-        <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
-          <button [ngClass]="{'selected':launchSucc==true}" type="button"
-            class="btn m-t-5 col-md-5 col-lg-5 col-xl-5 col-sm-5 col-xs-5"
-            (click)="filterChange('launch', true)">True</button>
-        </div>
-        <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
-          <button [ngClass]="{'selected':launchSucc==false}" type="button"
-            class="btn m-t-5 col-md-5 col-lg-5 col-xl-5 col-sm-5 col-xs-5"
-            (click)="filterChange('launch', false)">False</button>
+      <div class="p-t-10">
+        <span>Successfull Launch</span>
+        <hr class="hr-m">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
+            <button [ngClass]="{'selected':launchSucc==true}" type="button"
+              class="btn m-t-5 col-md-5 col-lg-5 col-xl-5 col-sm-5 col-xs-5"
+              (click)="filterChange('launch', true)">True</button>
+          </div>
+          <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
+            <button [ngClass]="{'selected':launchSucc==false}" type="button"
+              class="btn m-t-5 col-md-5 col-lg-5 col-xl-5 col-sm-5 col-xs-5"
+              (click)="filterChange('launch', false)">False</button>
+          </div>
         </div>
       </div>
 
-      <span> <u style="text-align: center !important;"> Successfull Landing </u></span>
-      <div class="row m-b-10">
-        <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
-          <button [ngClass]="{'selected':landSucc==true}" type="button" class="btn"
-            (click)="filterChange('land', true)">True</button>
-        </div>
-        <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
-          <button [ngClass]="{'selected':landSucc==false}" type="button" class="btn"
-            (click)="filterChange('land', false)">False</button>
+      <div class="p-t-10"> <span> Successfull Landing </span>
+        <hr class="hr-m">
+        <div class="row m-b-10">
+          <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
+            <button [ngClass]="{'selected':landSucc==true}" type="button" class="btn"
+              (click)="filterChange('land', true)">True</button>
+          </div>
+          <div class="col-6 col-md-6 col-lg-6 col-xl-6 col-sm-6 col-xs-6">
+            <button [ngClass]="{'selected':landSucc==false}" type="button" class="btn"
+              (click)="filterChange('land', false)">False</button>
+          </div>
         </div>
       </div>
+
 
     </div>
   </div>
@@ -50,16 +57,21 @@
             <img rel="preload" alt="" src="{{item.links.mission_patch_small}}" class="image">
           </div>
           <div>
-            {{item.mission_name}} #{{item.flight_number}} <br>
+            <span class="mission-color"><b>{{item.mission_name}} #{{item.flight_number}}</b></span> <br>
             <ng-container *ngIf="item.mission_id.length>0">
-              Mission IDs:
+              <b>Mission IDs:</b>
               <ul>
-                <li *ngFor="let elem of item.mission_id">{{elem}}</li>
+                <li class="res-color" *ngFor="let elem of item.mission_id">{{elem}}</li>
               </ul>
             </ng-container>
-            Launch Year: {{item.launch_year}}<br>
-            Successfull Launch: {{item.launch_success}}<br>
-            Successfull Landing:
+            <span class="year-color"><strong>Launch Year:</strong></span> <span
+              class="res-color">{{item.launch_year}}</span><br>
+            <span><strong>Successfull Launch:</strong></span> <span class="res-color">{{item.launch_success}}</span><br>
+            <span
+              *ngIf="item.launch_success&&item.rocket.first_stage.cores[item.rocket.first_stage.cores.length-1].land_success!=null"><strong>Successfull
+                Landing:</strong></span>
+            {{item.rocket.first_stage.cores[item.rocket.first_stage.cores.length-1].land_success}} <span
+              class="res-color"></span>
           </div>
         </div>
       </div>
