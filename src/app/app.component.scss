@@ -1,0 +1,89 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px !important;
+  }
+  
+  /* Create four equal columns */
+  .column {
+    flex: 25%;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color:white;
+
+  }
+  .btn-column {
+    flex: 25%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color:white;
+
+  }
+
+  .btn{
+    background-color: #c5e09b;
+    border-radius: 5px;
+  }
+  .selected{
+    background-color: #7cba01;
+  }
+  
+  /* On screens that are 700px wide or less, go from two columns to onw column */
+  @media screen and (max-width: 700px)  {
+    .column {
+      flex: 99%;
+    }
+    .content{
+        flex: 99%;
+    }
+    .filters{
+        flex: 99% !important;
+    }
+    .btn-column{
+      flex: 43%;
+    }
+    .btn{
+      width: 75%;
+    }
+  }
+  
+  /* On screens that are 701px wide or more, make the columns more than two stack on top of each other instead of next to each other */
+  @media screen and (min-width: 701px) and (max-width: 1024px) {
+    .column {
+        flex: 47%;
+    }
+    .filters{
+        flex: 24% !important;
+    }
+  }
+
+  /* On screens that are 1025px wide or more, make the columns more than four stack on top of each other instead of next to each other */
+  @media screen and (min-width: 1025px) {
+    .column {
+        flex: 23%;
+    }
+    .filters{
+        flex: 7% !important;
+    }
+  }
+
+  .content{
+      flex: 68%;
+      margin: 5px;
+  }
+
+  .filters{
+      // padding-left: 20px;
+      flex: 29%;
+      margin: 15px;
+      background-color:white;
+      border-radius: 5px;
+      height: fit-content;
+  }
+
+  .image{
+    width: 100%; 
+    align-content: center;
+  }

@@ -1,0 +1,86 @@
+<app-loader></app-loader>
+<div style="background-color:#f2f2f2;">
+
+  <div>
+    <h3>SpaceX Launch Program</h3>
+  </div>
+
+
+  <div class="row">
+    <div class="filters">
+      <h5>Filters</h5><br>
+      <span> <u style="align-content: center !important;"> Launch Year </u></span>
+      <div class="row">
+        <div class="btn-column" *ngFor="let y of years">
+          <button [ngClass]="{'selected':y==selectedYear}" type="button" class="btn "
+            (click)="yearChange(y)">{{y}}</button>
+        </div>
+      </div>
+
+      <span> <u style="text-align: center !important;"> Successfull Launch </u></span>
+      <div class="row">
+        <div class="btn-column">
+          <button [ngClass]="{'selected':launchSucc==true}" type="button" class="btn"
+            (click)="filterChange('launch', true)">True</button>
+        </div>
+        <div class="btn-column">
+          <button [ngClass]="{'selected':launchSucc==false}" type="button" class="btn"
+            (click)="filterChange('launch', false)">False</button>
+        </div>
+      </div>
+
+      <span> <u style="text-align: center !important;"> Successfull Landing </u></span>
+      <div class="row">
+        <div class="btn-column">
+          <button [ngClass]="{'selected':landSucc==true}" type="button" class="btn"
+            (click)="filterChange('land', true)">True</button>
+        </div>
+        <div class="btn-column">
+          <button [ngClass]="{'selected':landSucc==false}" type="button" class="btn"
+            (click)="filterChange('land', false)">False</button>
+        </div>
+      </div>
+
+    </div>
+    <ng-container *ngIf="data?.length!=0">
+      <div class="content">
+        <div class="row">
+          <div class="column" *ngFor="let item of data">
+            <div class="text-center" style="background-color: #f2f2f2;">
+              <img rel="preload" alt="" src="{{item.links.mission_patch_small}}" class="image">
+            </div>
+            <div>
+              {{item.mission_name}} #{{item.flight_number}} <br>
+              <ng-container *ngIf="item.mission_id.length>0">
+                Mission IDs:
+                <ul>
+                  <li *ngFor="let elem of item.mission_id">{{elem}}</li>
+                </ul>
+              </ng-container>
+              Launch Year: {{item.launch_year}}
+              Successfull Launch: {{item.launch_success}}
+              Successfull Landing:
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="data?.length==0" class="content">
+      <div>
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="53" height="72" viewBox="0 0 53 72">
+            <g fill="none">
+              <path fill="#999" d="M36.445 2.64L50.34 16.5h-8.278c-3.1-.01-5.61-2.52-5.618-5.619v-8.24z" />
+              <path fill="#CCC"
+                d="M47.344 71.166H5.618C2.52 71.157.008 68.646 0 65.548V5.618C.009 2.52 2.52.008 5.618 0H32.7v10.881c.002 5.17 4.193 9.362 9.364 9.364h10.88v45.303c.007 3.098-2.5 5.614-5.599 5.618z" />
+            </g>
+          </svg>
+          <strong class="font-16 gray-clr d-block m-t-16">No data found</strong>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+
+</div>
