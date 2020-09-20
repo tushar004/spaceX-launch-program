@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Live Demo: `http://super-grip.surge.sh/`.
 
 ## Description
-This is a simple project that shows information about SpaceX launch programs ,i.e., launching and landing status of their various rockets and missions with filters so that one can filter the desired content. It is responsive for small devices(phones), medium devices(tablets) and large devices(PCs or laptops) with simple and responsive UI.
+This is a simple project that shows information about SpaceX launch programs ,i.e., launching and landing status of their various rockets and missions with filters so that one can filter the desired content. It's UI is simple and responsive for small devices(phones), medium devices(tablets) and large devices(PCs or laptops).
 
 ## Approach used
 - For UI, flex is used with media query to create the different layouts ,i.e., one column in case of phones, two coumns in case of tablets and four columns in case of PC or laptop. For the Filters column, Bootstrap grid layout is used for all extra small to large devices.
