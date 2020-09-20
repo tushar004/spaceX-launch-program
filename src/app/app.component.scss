@@ -94,9 +94,6 @@
   width:80%;
 }
 
-.credit{
-  margin-left: 50%;
-}
 
 
  /* On screens that are 700px wide or less, go from two columns to onw column */
@@ -106,6 +103,7 @@
    }
    .sidenav{
      flex: 99%;
+     margin-left: 20px;
    }
    .content-main{
      flex: 99%;
