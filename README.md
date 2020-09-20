@@ -22,22 +22,6 @@ command.
 
 - No data found shown when there no results for a filter
 
-## Screenshots
--Phone:
-![alt text](https://ibb.co/MCFBpdM)
-![alt text](https://ibb.co/3W169vs)
-![alt text](https://ibb.co/swqvmkq)
-
--Tabket:
-![alt text](https://ibb.co/L0wMw3v)
-![alt text](https://ibb.co/f29svjD)
-![alt text](https://ibb.co/6WVKnRk)
-
--PC:
-![alt text](https://ibb.co/2KfmW2z)
-![alt text](https://ibb.co/vsKpp8x)
-
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
