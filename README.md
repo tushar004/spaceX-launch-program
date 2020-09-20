@@ -1,6 +1,42 @@
 # spaceX-launch-program
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+Live Demo: `http://super-grip.surge.sh/`.
+
+## Description
+This is a simple project that shows information about SpaceX launch programs ,i.e., launching and landing status of their various rockets and missions with filters so that one can filter the desired content. It is responsive for small devices(phones), medium devices(tablets) and large devices(PCs or laptops) with simple and responsive UI.
+
+## Approach used
+- For UI, flex is used with media query to create the different layouts ,i.e., one column in case of phones, two coumns in case of tablets and four columns in case of PC or laptop. For the Filters column, Bootstrap grid layout is used for all extra small to large devices.
+
+- For HTTP communication, fecth is used to communicate and call the API.
+
+- For unit testing, unit tests are written in Jasmine which can be executed on Karma test runner by `ng test`
+command.
+
+- For deployment, I've used npm package named `surge` but can be deployed on Heroku as well as the script is created for it and it can be done just by changing `start` in `scripts` in `package.json` to `node server.js` as heroku treats angular applications as node applications but deploying using surge is easier.
+
+
+## Extras 
+- Loader attached as it was taking long to load and was confusing if the page was blank.
+
+- No data found shown when there no results for a filter
+
+## Screenshots
+-Phone:
+![alt text](https://ibb.co/MCFBpdM)
+![alt text](https://ibb.co/3W169vs)
+![alt text](https://ibb.co/swqvmkq)
+
+-Tabket:
+![alt text](https://ibb.co/L0wMw3v)
+![alt text](https://ibb.co/f29svjD)
+![alt text](https://ibb.co/6WVKnRk)
+
+-PC:
+![alt text](https://ibb.co/2KfmW2z)
+![alt text](https://ibb.co/vsKpp8x)
+
 
 ## Development server
 
